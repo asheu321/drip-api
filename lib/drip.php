@@ -10,7 +10,6 @@ Class Drip_Api {
     private $error_message = '';
     private $user_agent = "Drip API PHP Wrapper (getdrip.com)";
     private $api_end_point = 'https://api.getdrip.com/v2/';
-    //private $api_end_point = 'http://localhost/echo/'; // dbg only
     private $recent_req_info = array(); // holds dbg info from a recent request
     private $timeout = 30;
     private $connect_timeout = 30;

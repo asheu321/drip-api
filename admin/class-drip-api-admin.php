@@ -207,4 +207,20 @@ class Drip_Api_Admin {
 		<?php
 	}
 
+	public function add_meta_boxes() {
+		add_meta_box( 'test', 'Test Metabox', array( $this, 'metabox_content' ), 'drip-api', 'advanced', 'high' );
+	}
+
+	public function metabox_content( $post ) {
+		# Use `get_post_meta()` to retrieve an existing value from the database and use the value for the form:
+
+	    require_once 'partials/drip-api-metabox-content.php';
+
+	    # Display the nonce hidden form field:
+	    wp_nonce_field(
+	        plugin_basename(__FILE__), // Action name.
+	        'drip_api_meta_box'        // Nonce name.
+	    );
+	}
+
 }

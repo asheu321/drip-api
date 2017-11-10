@@ -159,6 +159,8 @@ class Drip_Api {
 		$this->loader->add_action( 'admin_init', $plugin_admin, 'settings_init' );
 		$this->loader->add_action( 'init', $plugin_admin, 'create_post_type' );
 		$this->loader->add_action( 'admin_menu', $plugin_admin, 'admin_menu' );
+		$this->loader->add_action( 'add_meta_boxes', $plugin_admin, 'add_meta_boxes' );
+		$this->loader->add_action( 'save_post', $plugin_admin, 'save_meta_boxes' );
 
 	}
 
